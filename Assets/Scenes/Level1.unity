@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18119949, g: 0.22679439, b: 0.30733588, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 92063fbacbf60df4e90f65cec52091c6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 19db573a731104047906860228aa7146, type: 2}
     - target: {fileID: 919132149155446097, guid: 92063fbacbf60df4e90f65cec52091c6, type: 3}
       propertyPath: m_Name
       value: window2 (1)
@@ -227,9 +231,9 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Bias: 0.61
+    m_NormalBias: 0.56
+    m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -249,7 +253,7 @@ Light:
       e33: 1
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
@@ -274,14 +278,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802748064}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.2610369, y: 0.7832888, z: -0.3041268, w: 0.4752108}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 46.43, y: 121.816, z: 10.017}
 --- !u!1 &857034687
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +421,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0366472d6851a954f8a2a1229481b550, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9186957a6a7d1c749a69d5ca1c511a75, type: 2}
     - target: {fileID: 919132149155446097, guid: 0366472d6851a954f8a2a1229481b550, type: 3}
       propertyPath: m_Name
       value: grill2
@@ -474,6 +482,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2642cb3ba58650c45bc081e4e069bb82, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 023b28ae827411f4f88e75b571e11f91, type: 2}
     - target: {fileID: 919132149155446097, guid: 2642cb3ba58650c45bc081e4e069bb82, type: 3}
       propertyPath: m_Name
       value: backdrop
@@ -535,6 +547,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4303b6fa4afd5594f9163b554e3e96dc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 61b11a5c96dfb9b4a83f8b7259b178ea, type: 2}
     - target: {fileID: 919132149155446097, guid: 4303b6fa4afd5594f9163b554e3e96dc, type: 3}
       propertyPath: m_Name
       value: basic_front_door
@@ -600,6 +616,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 92063fbacbf60df4e90f65cec52091c6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 19db573a731104047906860228aa7146, type: 2}
     - target: {fileID: 919132149155446097, guid: 92063fbacbf60df4e90f65cec52091c6, type: 3}
       propertyPath: m_Name
       value: window2
