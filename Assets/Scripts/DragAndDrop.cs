@@ -7,15 +7,15 @@ public class DragAndDrop : MonoBehaviour
     private bool isDragging = false;
     private Vector3 offset;
 
-    public LayerMask groundLayer;
+    [SerializeField] private LayerMask groundLayer;
+
+    private Vector3 lastPlaced;
 
     void OnMouseDown()
     {
-        //Save initial position
-        Transform initialPos = transform;
+        Transform initialPos = transform;  //Save initial position
 
-        // Calculate offset between mouse position and object position
-        offset = transform.position - GetMouseWorldPos();
+        offset = transform.position - GetMouseWorldPos();  // Calculate offset between mouse position and object position
         isDragging = true;
     }
 
@@ -28,8 +28,7 @@ public class DragAndDrop : MonoBehaviour
     {
         if (isDragging)
         {
-            //Set object position based on the mouse position
-            transform.position = GetMouseWorldPos() + offset;
+            transform.position = GetMouseWorldPos() + offset;  //Set object position based on the mouse position
         }
     }
 
@@ -38,12 +37,14 @@ public class DragAndDrop : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
+
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
         {
-            // Adjust the hit point based on the isometric perspective
-            return new Vector3(hit.point.x, 0f, hit.point.z);
+            lastPlaced = new Vector3(hit.point.x, 0f, hit.point.z);  //Update latest position
+
+            return lastPlaced;  // Adjust the hit point based on the isometric perspective
         }
 
-        return Vector3.zero;
+        return lastPlaced;  //Return position before out of bounds
     }
 }
