@@ -461,11 +461,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 3, z: -13.42}
 =======
   m_LocalRotation: {x: 0.2610369, y: 0.7832888, z: -0.3041268, w: 0.4752108}
-  m_LocalPosition: {x: -6.15, y: 10.61, z: 3.82}
-<<<<<<< HEAD
->>>>>>> c0a7b9bf45f5c00c5877936cf41989d7157b76d8
-=======
->>>>>>> c0a7b9bf45f5c00c5877936cf41989d7157b76d8
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -554,18 +550,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
->>>>>>> c0a7b9bf45f5c00c5877936cf41989d7157b76d8
-=======
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
->>>>>>> c0a7b9bf45f5c00c5877936cf41989d7157b76d8
 --- !u!1001 &954953882
 PrefabInstance:
   m_ObjectHideFlags: 0
