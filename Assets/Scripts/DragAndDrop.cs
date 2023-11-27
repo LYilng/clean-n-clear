@@ -29,7 +29,19 @@ public class DragAndDrop : MonoBehaviour
         if (isDragging)
         {
             transform.position = GetMouseWorldPos() + offset;  //Set object position based on the mouse position
+
+            // Check if "R" key is pressed
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                RotateObject();
+            }
         }
+    }
+
+    void RotateObject()
+    {
+        // Rotate the object by 90 Degrees around the Y-axis
+        transform.Rotate(Vector3.up, 90f);
     }
 
     Vector3 GetMouseWorldPos()
