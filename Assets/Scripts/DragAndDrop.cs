@@ -40,8 +40,20 @@ public class DragAndDrop : MonoBehaviour
 
     void RotateObject()
     {
-        // Rotate the object by 90 Degrees around the Y-axis
-        transform.Rotate(Vector3.up, 90f);
+        // Get the current rotation of the object
+        Vector3 currentRotation = transform.eulerAngles;
+
+        // Check if the object is already rotated to a specific angle
+        if (Mathf.Approximately(currentRotation.y, 90f))
+        {
+            // Object is already rotated, do something else or skip rotation
+            transform.Rotate(Vector3.down, 90f);
+        }
+        else
+        {
+            // Rotate the object by 90 Degrees around the Y-axis
+            transform.Rotate(Vector3.up, 90f);
+        }
     }
 
     Vector3 GetMouseWorldPos()
