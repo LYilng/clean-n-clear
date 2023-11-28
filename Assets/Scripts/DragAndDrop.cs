@@ -7,7 +7,7 @@ public class DragAndDrop : MonoBehaviour
     private bool isDragging = false;
     private Vector3 offset;
 
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask hoverAreaLayer;
 
     private Vector3 lastPlaced;
 
@@ -62,7 +62,7 @@ public class DragAndDrop : MonoBehaviour
         RaycastHit hit;
 
 
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, hoverAreaLayer))
         {
             lastPlaced = new Vector3(hit.point.x, 0f, hit.point.z);  //Update latest position
 
