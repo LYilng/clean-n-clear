@@ -54,6 +54,6 @@ public class Checker : MonoBehaviour
 
     void LoadNextScene()
     {
-        Debug.Log("DEAD");
+        Debug.Log("All the objects are within the allowed area :)");
     }
 }
