@@ -1026,6 +1026,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e57a50c58fe7dc54b8a3ad090cef6b87, type: 2}
+    - target: {fileID: -4216859302048453862, guid: 6a3e950644bde66409ac791adcba90c2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -165.5
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6a3e950644bde66409ac791adcba90c2, type: 3}
       propertyPath: m_Name
       value: Dresser
@@ -1037,7 +1041,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 6a3e950644bde66409ac791adcba90c2, type: 3}
 --- !u!4 &1746913246 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6a3e950644bde66409ac791adcba90c2, type: 3}
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 6a3e950644bde66409ac791adcba90c2, type: 3}
   m_PrefabInstance: {fileID: 1746913245}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2018532842
