@@ -6,7 +6,12 @@ public class TrashBag : MonoBehaviour
 {
     [SerializeField] private int objectsDestroyed = 0;
     [SerializeField] private int maxObjectsDestroy = 2;
+    public SpaceIndicator spaceIndicator;
 
+    void Start()
+    {
+        spaceIndicator.SetStartingSpace(maxObjectsDestroy);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Object"))
@@ -14,7 +19,7 @@ public class TrashBag : MonoBehaviour
             Debug.Log("Trash Bag DESTORYED an object :>");
             Destroy(other.gameObject);
 
-            objectsDestroyed++;
+            addTrash(1);
 
             if(objectsDestroyed >= maxObjectsDestroy)
             {
@@ -22,5 +27,12 @@ public class TrashBag : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+
+    void addTrash(int trash)
+    {
+        objectsDestroyed += trash;
+        spaceIndicator.SetSpace(objectsDestroyed);
+        Debug.Log("TRASHHH");
     }
 }
