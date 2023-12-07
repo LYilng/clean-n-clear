@@ -17,10 +17,19 @@ public class GridSnap : MonoBehaviour
 
     private Bounds bounds;
 
+    private bool isIntersecting;
+    private Vector3 lastPlaced;
+
     private void Start()
     {
         objSize = GetComponent<BoxCollider>();
         bounds = boundingCollider.bounds;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        isIntersecting = true;
+        Debug.Log("is Intersecting");
     }
 
     void Update()
@@ -42,24 +51,36 @@ public class GridSnap : MonoBehaviour
         {
             if (transform.eulerAngles.y == 0)
             {
-                if (objSize.size.x % 2 == 0)  //If object size is even, snap to within boundary coordinates
+                /*if (objSize.size.x % 2 == 0)  //If object size is even, snap to within boundary coordinates
                 {
                     clampedX = Mathf.Clamp(snappedX, bounds.min.x + 0.5f, bounds.max.x - 1.5f);
                     clampedZ = Mathf.Clamp(snappedZ, bounds.min.z + 0.5f, bounds.max.z - 0.5f);
-                }
+                }*/
+                clampedX = Mathf.Clamp(snappedX, bounds.min.x + 0.5f, bounds.max.x - 1.5f);
+                clampedZ = Mathf.Clamp(snappedZ, bounds.min.z + 0.5f, bounds.max.z - 0.5f);
             }
 
             else
             {
-                if (objSize.size.x % 2 == 0)  //If object size is even, snap to within boundary coordinates
+                /*if (objSize.size.x % 2 == 0)  //If object size is even, snap to within boundary coordinates
                 {
                     clampedX = Mathf.Clamp(snappedX, bounds.min.x + 0.5f, bounds.max.x - 0.5f);
                     clampedZ = Mathf.Clamp(snappedZ, bounds.min.z + 1.5f, bounds.max.z - 0.5f);
-                }
+                }*/
+                clampedX = Mathf.Clamp(snappedX, bounds.min.x + 0.5f, bounds.max.x - 0.5f);
+                clampedZ = Mathf.Clamp(snappedZ, bounds.min.z + 1.5f, bounds.max.z - 0.5f);
             }
         }
 
-        //Force the object's position to be within boundaries
-        transform.position = new Vector3(clampedX, 0f, clampedZ);
+        if (isIntersecting)
+        {
+            transform.position = lastPlaced;
+        }
+        else
+        {
+            //Force the object's position to be within boundaries
+            transform.position = new Vector3(clampedX, 0f, clampedZ);
+            lastPlaced = transform.position;
+        }
     }
 }

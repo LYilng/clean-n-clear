@@ -5,21 +5,18 @@ using UnityEngine;
 public class Checker : MonoBehaviour
 {
     public string objectTag = "Object";
-    public float areaWidth = 2f;
-    public float areaLength = 11f;
     public string nextSceneName = "NextScene";
+
+    public BoxCollider groundCollider;
+    private Bounds groundBounds;
+
+    private bool success = true;
 
     void Start()
     {
         RotateArea();
-    }
 
-    void Update()
-    {
-        if (CheckObjectsInArea())
-        {
-            LoadNextScene();
-        }
+        groundBounds = groundCollider.bounds;
     }
 
     void RotateArea()
@@ -28,32 +25,61 @@ public class Checker : MonoBehaviour
         transform.Rotate(0f, 90f, 0f);
     }
 
-    bool CheckObjectsInArea()
+    public void CheckObjectsInArea()
     {
         GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(objectTag);
 
         foreach (GameObject obj in objectsWithTag)
         {
-            Vector3 objPosition = obj.transform.position;
+            BoxCollider objCollider = obj.GetComponent<BoxCollider>();
+            Vector3 objPos = obj.transform.position;
 
-            float areaCenterX = transform.position.x;
-            float areaCenterZ = transform.position.z;
-
-            // Check if the object is within the specified area
-            if (objPosition.x < areaCenterX - areaLength / 2 || objPosition.x > areaCenterX + areaLength / 2 ||
-                objPosition.z < areaCenterZ - areaWidth / 2 || objPosition.z > areaCenterZ + areaWidth / 2)
+            if (objCollider.size.x % 2 != 0)  //If object is 1x1 size
             {
-                // Object is outside the area
-                return false;
+                if (!(objPos.z > groundBounds.min.z + 3f && objPos.z < groundBounds.max.z))  //if x position is within boundaries of correct area
+                {
+                    success = false;
+                    break;
+                }
+            }
+
+            else
+            {
+                if (obj.transform.eulerAngles.y == 0)
+                {
+                    if (!(objPos.z > groundBounds.min.z + 3f && objPos.z < groundBounds.max.z))  //if x position is within boundaries of correct area
+                    {
+                        success = false;
+                        break;
+                    }
+                }
+
+                else
+                {
+                    if (!(objPos.z > groundBounds.min.z + 4f && objPos.z < groundBounds.max.z))  //if x position is within boundaries of correct area
+                    {
+                        success = false;
+                        break;
+                    }
+                }
             }
         }
 
-        // All objects are within the area
-        return true;
+        if (success)
+        {
+            LoadNextScene();
+        }
+        else
+        {
+            Debug.Log("Level Failed");
+        }
+
+        success = true;
     }
 
     void LoadNextScene()
     {
         Debug.Log("All the objects are within the allowed area :)");
+        Debug.Log("Loading Next Level");
     }
 }
