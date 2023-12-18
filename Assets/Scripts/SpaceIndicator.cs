@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SpaceIndicator : MonoBehaviour
 {
-    public Slider slider;
-    public Gradient gradient;
-    public Image fill;
+    public TextMeshProUGUI text;
 
-    public void SetStartingSpace(int space)
+    public void SetStartingText(int space)
     {
-        slider.maxValue = space;
-        slider.value = 0;
-
-        fill.color = gradient.Evaluate(1f);
+        UpdateText(space);
     }
+
     public void SetSpace(int space)
     {
-        slider.value = space;
+        UpdateText(space);
+    }
 
-        fill.color = gradient.Evaluate(slider.normalizedValue);
+    private void UpdateText(int current)
+    {
+        text.text = $"{current}";
     }
 }
