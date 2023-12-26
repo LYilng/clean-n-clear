@@ -13,11 +13,11 @@ public class MoveCounter : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            UpdateMoveCount();
+            IncrementMoveCount();
         }
     }
 
-    void UpdateMoveCount()
+    void IncrementMoveCount()
     {
         moveCount++;
         moveCountText.text = moveCount.ToString();

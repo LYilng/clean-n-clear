@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GridSnap : MonoBehaviour
@@ -47,26 +48,16 @@ public class GridSnap : MonoBehaviour
             clampedZ = Mathf.Clamp(snappedZ, bounds.min.z + 0.5f, bounds.max.z - 0.5f);
         }
 
-        else
+        else  //If object size is not 1x1. Use the following to check (2x1) if we adding 3x1 etc.: if (objSize.size.x == 2.0f)
         {
             if (transform.eulerAngles.y == 0)
             {
-                /*if (objSize.size.x % 2 == 0)  //If object size is even, snap to within boundary coordinates
-                {
-                    clampedX = Mathf.Clamp(snappedX, bounds.min.x + 0.5f, bounds.max.x - 1.5f);
-                    clampedZ = Mathf.Clamp(snappedZ, bounds.min.z + 0.5f, bounds.max.z - 0.5f);
-                }*/
                 clampedX = Mathf.Clamp(snappedX, bounds.min.x + 0.5f, bounds.max.x - 1.5f);
                 clampedZ = Mathf.Clamp(snappedZ, bounds.min.z + 0.5f, bounds.max.z - 0.5f);
             }
 
             else
             {
-                /*if (objSize.size.x % 2 == 0)  //If object size is even, snap to within boundary coordinates
-                {
-                    clampedX = Mathf.Clamp(snappedX, bounds.min.x + 0.5f, bounds.max.x - 0.5f);
-                    clampedZ = Mathf.Clamp(snappedZ, bounds.min.z + 1.5f, bounds.max.z - 0.5f);
-                }*/
                 clampedX = Mathf.Clamp(snappedX, bounds.min.x + 0.5f, bounds.max.x - 0.5f);
                 clampedZ = Mathf.Clamp(snappedZ, bounds.min.z + 1.5f, bounds.max.z - 0.5f);
             }
