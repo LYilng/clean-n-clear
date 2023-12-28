@@ -36,6 +36,7 @@ public class ConfirmPosition : MonoBehaviour
 
     public void Confirm()
     {
+        Debug.Log("Confirm");
         //Retrieve object's DragAndDrop script using the selectedID
         Transform Object = IDManager.instance.objects.GetChild(IDManager.instance.selectedID);
         DragAndDrop dndScript = Object.gameObject.GetComponent<DragAndDrop>();
