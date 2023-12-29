@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -114,7 +115,19 @@ public class DragAndDrop : MonoBehaviour
 
         foreach (Collider obj in colliders)
         {
-            if (obj.CompareTag("Object"))
+            if (obj.CompareTag("TrashBag"))
+            {
+                Debug.Log("Trash Bag DESTORYED an object :>");
+                Destroy(boxCollider.gameObject);
+
+                TrashBag.instance.UpdateUI();
+                return false;
+            }
+        }
+        /*
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].CompareTag("TrashBag"))
             {
                 Debug.Log("Trash Bag DESTORYED an object :>");
                 Destroy(obj.gameObject);
@@ -122,7 +135,7 @@ public class DragAndDrop : MonoBehaviour
                 TrashBag.instance.UpdateUI();
                 return false;
             }
-        }
+        }*/
 
         if (colliders.Length > 1)  //Check if the object's collider intersects with more than 1 object (object always intersects with ground, hence value 1)
         {

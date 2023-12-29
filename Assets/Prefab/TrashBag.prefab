@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 984904280074630448}
   m_Layer: 0
   m_Name: TrashBag
-  m_TagString: Untagged
+  m_TagString: TrashBag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -831,8 +831,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0.048708677, y: -0.031133771, z: 0.023560889}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &984904280074630448
 Rigidbody:
   m_ObjectHideFlags: 0
