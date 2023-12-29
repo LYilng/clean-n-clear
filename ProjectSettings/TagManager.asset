@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Object
   - TrashBag
-  - Trashbag
   layers:
   - Default
   - TransparentFX

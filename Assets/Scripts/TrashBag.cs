@@ -25,28 +25,6 @@ public class TrashBag : MonoBehaviour
         spaceIndicator.SetStartingText(objectsDestroyed);
         lastDestructionTime = -cooldown;
     }
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Object") && Time.time - lastDestructionTime >= cooldown)
-        {
-            Debug.Log("Trash Bag DESTORYED an object :>");
-            Destroy(other.gameObject);
-
-            addTrash(1);
-
-            if(objectsDestroyed >= maxObjectsDestroy)
-            {
-                Debug.Log("Trash Bag: Self-destructing");
-                Destroy(gameObject);
-            }
-
-            lastDestructionTime = Time.time;
-
-            cdManager.gameObject.SetActive(true);
-            cdManager.StartCooldown();
-        }
-    }*/
 
     public void UpdateUI()
     {

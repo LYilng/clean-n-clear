@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8337afd2686aad6478960f66d30f7e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashBagPrefab: {fileID: 8718811027808307167, guid: 663a647362b3d414791094c9b4d07e3e, type: 3}
+  trashBagPrefab: {fileID: 2865795771039488252, guid: 663a647362b3d414791094c9b4d07e3e, type: 3}
 --- !u!1 &1473200733
 GameObject:
   m_ObjectHideFlags: 0

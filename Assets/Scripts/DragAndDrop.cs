@@ -118,24 +118,12 @@ public class DragAndDrop : MonoBehaviour
             if (obj.CompareTag("TrashBag"))
             {
                 Debug.Log("Trash Bag DESTORYED an object :>");
-                Destroy(boxCollider.gameObject);
+                boxCollider.gameObject.SetActive(false);  //Deactivate object (not destroy because destroy causes problems with ID handling)
 
                 TrashBag.instance.UpdateUI();
                 return false;
             }
         }
-        /*
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            if (colliders[i].CompareTag("TrashBag"))
-            {
-                Debug.Log("Trash Bag DESTORYED an object :>");
-                Destroy(obj.gameObject);
-
-                TrashBag.instance.UpdateUI();
-                return false;
-            }
-        }*/
 
         if (colliders.Length > 1)  //Check if the object's collider intersects with more than 1 object (object always intersects with ground, hence value 1)
         {

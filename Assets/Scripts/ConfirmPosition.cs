@@ -38,6 +38,9 @@ public class ConfirmPosition : MonoBehaviour
     {
         Debug.Log("Confirm");
         //Retrieve object's DragAndDrop script using the selectedID
+
+        Debug.Log(IDManager.instance.selectedID);
+
         Transform Object = IDManager.instance.objects.GetChild(IDManager.instance.selectedID);
         DragAndDrop dndScript = Object.gameObject.GetComponent<DragAndDrop>();
 
@@ -59,6 +62,9 @@ public class ConfirmPosition : MonoBehaviour
     {
         //Retrieve object's DragAndDrop script using the selectedID
         Transform Object = IDManager.instance.objects.GetChild(IDManager.instance.selectedID);
+
+        Debug.Log(IDManager.instance.selectedID);
+
         DragAndDrop dndScript = Object.gameObject.GetComponent<DragAndDrop>();
 
         dndScript.ResetToOriginalTansform();  //Call function to reset object's transform to initial transform
