@@ -112,6 +112,18 @@ public class DragAndDrop : MonoBehaviour
         Bounds colliderBounds = boxCollider.bounds;  //Gets the bounds of box collider
         Collider[] colliders = Physics.OverlapBox(colliderBounds.center, colliderBounds.extents, transform.rotation);  //Check for colliders intersecting with boundaries of object's box collider
 
+        foreach (Collider obj in colliders)
+        {
+            if (obj.CompareTag("Object"))
+            {
+                Debug.Log("Trash Bag DESTORYED an object :>");
+                Destroy(obj.gameObject);
+
+                TrashBag.instance.UpdateUI();
+                return false;
+            }
+        }
+
         if (colliders.Length > 1)  //Check if the object's collider intersects with more than 1 object (object always intersects with ground, hence value 1)
         {
             return true;

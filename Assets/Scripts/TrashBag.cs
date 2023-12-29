@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TrashBag : MonoBehaviour
 {
+    public static TrashBag instance;
+
     [SerializeField] private int objectsDestroyed = 0;
     [SerializeField] private int maxObjectsDestroy = 2;
     [SerializeField] private float cooldown = 1.5f;
@@ -12,11 +14,17 @@ public class TrashBag : MonoBehaviour
     public SpaceIndicator spaceIndicator;
     public TrashbagCooldown cdManager;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         spaceIndicator.SetStartingText(objectsDestroyed);
         lastDestructionTime = -cooldown;
     }
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Object") && Time.time - lastDestructionTime >= cooldown)
@@ -37,6 +45,22 @@ public class TrashBag : MonoBehaviour
             cdManager.gameObject.SetActive(true);
             cdManager.StartCooldown();
         }
+    }*/
+
+    public void UpdateUI()
+    {
+        addTrash(1);
+
+        if (objectsDestroyed >= maxObjectsDestroy)
+        {
+            Debug.Log("Trash Bag: Self-destructing");
+            Destroy(gameObject);
+        }
+
+        lastDestructionTime = Time.time;
+
+        cdManager.gameObject.SetActive(true);
+        cdManager.StartCooldown();
     }
 
     void addTrash(int trash)
