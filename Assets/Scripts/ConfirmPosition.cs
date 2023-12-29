@@ -45,6 +45,7 @@ public class ConfirmPosition : MonoBehaviour
 
         if (isIntersecting)
         {
+
             Cancel();
         }
         else

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Search;
 using UnityEngine;
 
 public class TrashBag : MonoBehaviour
@@ -8,8 +9,8 @@ public class TrashBag : MonoBehaviour
 
     [SerializeField] private int objectsDestroyed = 0;
     [SerializeField] private int maxObjectsDestroy = 2;
-    [SerializeField] private float cooldown = 1.5f;
-    private float lastDestructionTime;
+    [SerializeField] public float cooldown = 1.5f;
+    public float lastDestructionTime;
 
     public SpaceIndicator spaceIndicator;
     public TrashbagCooldown cdManager;
