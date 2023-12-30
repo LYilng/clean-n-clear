@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Checker : MonoBehaviour
 {
@@ -81,5 +82,6 @@ public class Checker : MonoBehaviour
     {
         Debug.Log("All the objects are within the allowed area :)");
         Debug.Log("Loading Next Level");
+        SceneManager.LoadScene("Level02");
     }
 }
