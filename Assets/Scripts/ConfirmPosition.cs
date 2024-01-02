@@ -11,6 +11,8 @@ public class ConfirmPosition : MonoBehaviour
 
     private int moveCount = 0;
     public TMP_Text moveCountText;
+    public TMP_Text panelMoveText;
+    public GameObject panel;
 
     private void Awake()
     {
@@ -84,5 +86,10 @@ public class ConfirmPosition : MonoBehaviour
     {
         moveCount++;  //Increase move count
         moveCountText.text = moveCount.ToString();  //Update move counter indicator
+    }
+
+    public void ShowPanelWithMove()
+    {
+        panelMoveText.text = moveCount.ToString();
     }
 }

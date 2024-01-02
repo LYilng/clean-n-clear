@@ -10,8 +10,11 @@ public class Checker : MonoBehaviour
 
     public BoxCollider groundCollider;
     private Bounds groundBounds;
+    public GameObject panel;
+    public Timer timer;
+    public ConfirmPosition confirmPosition;
 
-    private bool success = true;
+    public static bool success = true;
 
     void Start()
     {
@@ -68,20 +71,29 @@ public class Checker : MonoBehaviour
 
         if (success)
         {
-            LoadNextScene();
+            //LoadNextScene();
+            timer.ShowPanelWithTimer();
+            confirmPosition.ShowPanelWithMove();
         }
         else
         {
+            panel.SetActive(false);
+            // Put deduct health here
             Debug.Log("Level Failed");
         }
 
         success = true;
     }
 
-    void LoadNextScene()
+    public void LoadNextScene()
     {
         Debug.Log("All the objects are within the allowed area :)");
         Debug.Log("Loading Next Level");
         SceneManager.LoadScene("Level02");
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
