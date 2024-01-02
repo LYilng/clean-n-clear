@@ -5,7 +5,7 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
-    public bool isPaused;
+    bool isPaused = false;
 
     void Start()
     {
@@ -16,11 +16,11 @@ public class PauseMenu : MonoBehaviour
     {
         if (isPaused)
         {
-            ResumeLevel();
+            PauseLevel();
         }
         else
         {
-            PauseLevel();
+            ResumeLevel();
         }
     }
 
