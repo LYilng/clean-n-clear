@@ -7,6 +7,7 @@ using UnityEngine;
 public class ConfirmPosition : MonoBehaviour
 {
     public static ConfirmPosition instance;
+    private Transform Object;
     public GameObject objUI;  //Object UI (confirm, cancel, rotate)
 
     private int moveCount = 0;
@@ -38,19 +39,13 @@ public class ConfirmPosition : MonoBehaviour
 
     public void Confirm()
     {
-        Debug.Log("Confirm");
-        //Retrieve object's DragAndDrop script using the selectedID
-
-        Debug.Log(IDManager.instance.selectedID);
-
-        Transform Object = IDManager.instance.objects.GetChild(IDManager.instance.selectedID);
+        RetrieveObject();
         DragAndDrop dndScript = Object.gameObject.GetComponent<DragAndDrop>();
 
         bool isIntersecting = dndScript.CheckIntersecting();
 
         if (isIntersecting)
         {
-
             Cancel();
         }
         else
@@ -62,11 +57,7 @@ public class ConfirmPosition : MonoBehaviour
 
     public void Cancel()
     {
-        //Retrieve object's DragAndDrop script using the selectedID
-        Transform Object = IDManager.instance.objects.GetChild(IDManager.instance.selectedID);
-
-        Debug.Log(IDManager.instance.selectedID);
-
+        RetrieveObject();
         DragAndDrop dndScript = Object.gameObject.GetComponent<DragAndDrop>();
 
         dndScript.ResetToOriginalTansform();  //Call function to reset object's transform to initial transform
@@ -75,11 +66,25 @@ public class ConfirmPosition : MonoBehaviour
 
     public void Rotate()
     {
-        //Retrieve object's DragAndDrop script using the selectedID
-        Transform Object = IDManager.instance.objects.GetChild(IDManager.instance.selectedID);
+        RetrieveObject();
         DragAndDrop dndScript = Object.gameObject.GetComponent<DragAndDrop>();
 
         dndScript.RotateObject();  //Call function to rotate the object
+    }
+
+    private void RetrieveObject()
+    {
+        Transform ObjectsList = IDManager.instance.objects;
+        int selectedID = IDManager.instance.selectedID;
+
+        if (selectedID >= ObjectsList.childCount - 1)
+        {
+            Object = ObjectsList.Find("Trash").GetChild(selectedID - ObjectsList.childCount + 1);
+        }
+        else
+        {
+            Object = IDManager.instance.objects.GetChild(IDManager.instance.selectedID);
+        }
     }
 
     void IncrementMoveCount()

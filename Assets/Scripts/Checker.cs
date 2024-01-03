@@ -14,6 +14,8 @@ public class Checker : MonoBehaviour
     public Timer timer;
     public ConfirmPosition confirmPosition;
 
+    public Transform trashFolder;
+
     public static bool success = true;
 
     void Start()
@@ -29,9 +31,10 @@ public class Checker : MonoBehaviour
         transform.Rotate(0f, 90f, 0f);
     }
 
-    public void CheckObjectsInArea()
+    private bool CheckObjectsInArea()
     {
         GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(objectTag);
+        bool isObjInArea = true;
 
         foreach (GameObject obj in objectsWithTag)
         {
@@ -42,7 +45,7 @@ public class Checker : MonoBehaviour
             {
                 if (!(objPos.z > groundBounds.min.z + 3f && objPos.z < groundBounds.max.z))  //if x position is within boundaries of correct area
                 {
-                    success = false;
+                    isObjInArea = false;
                     break;
                 }
             }
@@ -53,7 +56,7 @@ public class Checker : MonoBehaviour
                 {
                     if (!(objPos.z > groundBounds.min.z + 3f && objPos.z < groundBounds.max.z))  //if x position is within boundaries of correct area
                     {
-                        success = false;
+                        isObjInArea = false;
                         break;
                     }
                 }
@@ -62,14 +65,57 @@ public class Checker : MonoBehaviour
                 {
                     if (!(objPos.z > groundBounds.min.z + 4f && objPos.z < groundBounds.max.z))  //if x position is within boundaries of correct area
                     {
-                        success = false;
+                        isObjInArea = false;
                         break;
                     }
                 }
             }
         }
 
-        if (success)
+        if (isObjInArea)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private bool CheckTrashInArea()
+    {
+        int trashCount = trashFolder.childCount;
+
+        for (int i = 0; i < trashFolder.childCount; i++)  //For every object that is a child of the 'Objects' game object,
+        {
+            Transform child = trashFolder.GetChild(i);
+
+            if (child.gameObject.activeSelf == true)
+            {
+                break;
+            }
+            else
+            {
+                trashCount--;
+            }
+        }
+
+        if (trashCount > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void CheckSuccess()
+    {
+        bool isObjsInArea = CheckObjectsInArea();
+        bool containsTrash = CheckTrashInArea();
+
+        if (isObjsInArea && !containsTrash)  //If objects are in correct area and all trash is removed
         {
             //LoadNextScene();
             timer.ShowPanelWithTimer();
@@ -81,8 +127,6 @@ public class Checker : MonoBehaviour
             // Put deduct health here
             Debug.Log("Level Failed");
         }
-
-        success = true;
     }
 
     public void LoadNextScene()
