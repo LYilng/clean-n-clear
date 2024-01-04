@@ -303,7 +303,7 @@ RectTransform:
   m_GameObject: {fileID: 191910724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 672924216}
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 098ef6cc6865be449bc92607fc307eee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08071e4aad238ab4b92faa314ad33883, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3242,14 +3242,14 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1020134589}
   - {fileID: 586210679}
   - {fileID: 672924216}
   - {fileID: 1082360215}
-  - {fileID: 1868786259}
   - {fileID: 701103994}
   - {fileID: 844452136}
   - {fileID: 2130958276}
+  - {fileID: 1020134589}
+  - {fileID: 1868786259}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4212,7 +4212,7 @@ RectTransform:
   m_GameObject: {fileID: 1769083443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 672924216}
@@ -4298,7 +4298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f97e5574dd5c44748a46a0b713e05cb4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ccd1fa1ddc37004f96f650d8a303785, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4907,7 +4907,7 @@ RectTransform:
   m_GameObject: {fileID: 1948901743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 672924216}
@@ -4993,7 +4993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 22daf387b384144448c31e1d2744630d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c06a2a9bd92210247993aba4712af054, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
