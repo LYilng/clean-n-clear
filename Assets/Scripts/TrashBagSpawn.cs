@@ -14,7 +14,7 @@ public class TrashBagSpawn : MonoBehaviour
     {
         if (trashBagsSpawned < maxTrashBag)
         {
-            Instantiate(trashBagPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            Instantiate(trashBagPrefab, new Vector3(10,0,0), Quaternion.identity);
             trashBagsSpawned++;
         }
     }
