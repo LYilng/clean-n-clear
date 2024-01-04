@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class Timer : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class Timer : MonoBehaviour
         // Update the TMP text with the current timer value
         if (timerText != null)
         {
-            timerText.text = timer.ToString("F2"); // Format to two decimal places
+            timerText.text = TimeSpan.FromSeconds(timer).ToString(@"mm\:ss"); // Format to two decimal places
         }
     }
 
@@ -58,7 +59,7 @@ public class Timer : MonoBehaviour
         // Update the TextMeshPro on the panel with the current timer value
         if (panelTimerText != null)
         {
-            panelTimerText.text = timer.ToString("F2");
+            panelTimerText.text = TimeSpan.FromSeconds(timer).ToString(@"mm\:ss");
         }
     }
 }
