@@ -1088,6 +1088,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   objUI: {fileID: 672924215}
+  hologramMaterial: {fileID: 2100000, guid: a95de9a2b48c70b45a72dcb704345911, type: 2}
 --- !u!114 &391587311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2214,7 +2215,7 @@ GameObject:
   - component: {fileID: 955686305}
   - component: {fileID: 955686307}
   m_Layer: 7
-  m_Name: Rec_box
+  m_Name: Shoe_Rack
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2252,6 +2253,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   objUI: {fileID: 672924215}
+  hologramMaterial: {fileID: 2100000, guid: e8f58986b0345184084cb1be574e8aad, type: 2}
 --- !u!114 &955686306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3434,6 +3436,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   objUI: {fileID: 672924215}
+  hologramMaterial: {fileID: 2100000, guid: 084e203243f0fec40a6169d08137b094, type: 2}
 --- !u!114 &1419636272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3686,7 +3689,7 @@ GameObject:
   - component: {fileID: 1473200735}
   - component: {fileID: 1473200734}
   m_Layer: 7
-  m_Name: Blue
+  m_Name: Rec_Box
   m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3708,6 +3711,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   objUI: {fileID: 672924215}
+  hologramMaterial: {fileID: 2100000, guid: d31fe02ec98d65e44ac06e1107f2172e, type: 2}
 --- !u!114 &1473200735
 MonoBehaviour:
   m_ObjectHideFlags: 0

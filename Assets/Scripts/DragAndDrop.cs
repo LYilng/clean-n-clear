@@ -29,6 +29,9 @@ public class DragAndDrop : MonoBehaviour
     public GameObject objUI;  //Object UI (confirm, cancel, rotate)
     private Vector3 UIOffset = new Vector3(0, -200, 0);
 
+    public Material hologramMaterial;
+    private GameObject hologramInstance;
+
     private void Start()
     {
         initialPos = transform.position;  //Save obj's start position
@@ -38,8 +41,7 @@ public class DragAndDrop : MonoBehaviour
     void OnMouseDown()
     {
         Debug.Log(ID);
-
-        if(IDManager.instance.isObjSelected == false)  //If an object is not selected
+        if (IDManager.instance.isObjSelected == false)  //If an object is not selected
         {
             IDManager.instance.isObjSelected = true;
             IDManager.instance.selectedID = ID;  //Store the object's ID as the selectedID
@@ -54,6 +56,12 @@ public class DragAndDrop : MonoBehaviour
 
             offset = transform.position - GetMouseWorldPos();  // Calculate offset between mouse position and object position
             isDragging = true;
+
+            if (hologramInstance == null)
+            {
+                hologramInstance = Instantiate(gameObject, initialPos, initialRot);
+                ApplyHologramMaterial(hologramInstance);
+            }
         }
     }
 
@@ -141,5 +149,25 @@ public class DragAndDrop : MonoBehaviour
     {
         transform.position = initialPos;
         transform.rotation = initialRot;
+    }
+    private void ApplyHologramMaterial(GameObject obj)
+    {
+        if (hologramMaterial != null)
+        {
+            Renderer[] renderers = obj.GetComponentsInChildren<Renderer>();
+            foreach (Renderer renderer in renderers)
+            {
+                renderer.material = hologramMaterial;
+            }
+        }
+    }
+
+    public void DestroyHologram()
+    {
+        if (hologramInstance != null)
+        {
+            Destroy(hologramInstance);
+            hologramInstance = null;
+        }
     }
 }

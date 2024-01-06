@@ -34,6 +34,14 @@ public class ConfirmPosition : MonoBehaviour
         {
             objUI.SetActive(false);
             IDManager.instance.isObjSelected = false;
+            RetrieveObject();
+            DragAndDrop dndScript = Object.gameObject.GetComponent<DragAndDrop>();
+
+            if (dndScript != null)
+            {
+                // Call DestroyHologram on the instance of DragAndDrop
+                dndScript.DestroyHologram();
+            }
         }
     }
 
