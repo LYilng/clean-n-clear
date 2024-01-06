@@ -40,6 +40,8 @@ public class DragAndDrop : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (objUI == null) return;
+        
         Debug.Log(ID);
         if (IDManager.instance.isObjSelected == false)  //If an object is not selected
         {

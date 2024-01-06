@@ -21,8 +21,6 @@ public class TcQTE : MonoBehaviour
         progressBar.value = startValue;
         progressBar.maxValue = maxValue;
         currentValue = startValue;
-
-
     }
 
     void Update()
@@ -72,7 +70,7 @@ public class TcQTE : MonoBehaviour
             TownCouncilBtn.QTEWin = true;
             TownCouncilBtn.TcIsPressed = false;
             Debug.Log(currentValue);
-            Destroy(rootTransform.gameObject);
+            rootTransform.gameObject.SetActive(false);
         }
     }
 }
