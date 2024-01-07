@@ -18,6 +18,8 @@ public class Checker : MonoBehaviour
 
     public static bool success = true;
 
+    private Health healthComponent;
+
     void Start()
     {
         RotateArea();
@@ -123,8 +125,10 @@ public class Checker : MonoBehaviour
         }
         else
         {
+            healthComponent = GetComponent<Health>();
+            healthComponent.ReduceHealth(1);
+
             panel.SetActive(false);
-            // Put deduct health here
             Debug.Log("Level Failed");
         }
     }
