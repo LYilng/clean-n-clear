@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     bool isPaused = false;
     private int currentLvlID;
+    public GameObject[] canvasElements;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        HideCanvasElements();
     }
 
     public void ResumeLevel()
@@ -41,10 +43,41 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        ShowCanvasElements();
     }
 
     public void RestartLevel()
     {
         SceneManager.LoadScene(currentLvlID);
+    }
+
+    public void HideCanvasElements()
+    {
+        foreach (GameObject canvasElement in canvasElements)
+        {
+            if (canvasElement != null)
+            {
+                canvasElement.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("Error");
+            }
+        }
+    }
+
+    public void ShowCanvasElements()
+    {
+        foreach (GameObject canvasElement in canvasElements)
+        {
+            if (canvasElement != null)
+            {
+                canvasElement.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("Error");
+            }
+        }
     }
 }

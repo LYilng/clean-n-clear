@@ -129,7 +129,6 @@ public class Checker : MonoBehaviour
             healthComponent.ReduceHealth(1);
 
             panel.SetActive(false);
-            Debug.Log("Level Failed");
         }
     }
 
