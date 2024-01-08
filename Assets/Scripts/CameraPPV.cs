@@ -5,9 +5,16 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class CameraPPV : MonoBehaviour
 {
+    public static CameraPPV instance;
+
     private PostProcessVolume postPV;
     public PostProcessProfile globalCamera;
     public PostProcessProfile uiCamera;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -15,12 +22,12 @@ public class CameraPPV : MonoBehaviour
         SwitchProfile(globalCamera);
     }
 
-    public void SwitchToCamera()
+    public void SwitchToCamera() //Blur
     {
         SwitchProfile(uiCamera);
     }
 
-    public void SwitchToGlobal()
+    public void SwitchToGlobal() //Normal
     {
         SwitchProfile(globalCamera);
     }

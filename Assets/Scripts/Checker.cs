@@ -20,6 +20,8 @@ public class Checker : MonoBehaviour
 
     private Health healthComponent;
 
+    public GameObject reminderPanel;
+
     void Start()
     {
         RotateArea();
@@ -129,6 +131,7 @@ public class Checker : MonoBehaviour
             healthComponent.ReduceHealth(1);
 
             panel.SetActive(false);
+            ShowReminder();
         }
     }
 
@@ -142,5 +145,19 @@ public class Checker : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void ShowReminder()
+    {
+        reminderPanel.SetActive(true);
+        CameraPPV.instance.SwitchToCamera();
+        Timer.instance.isTiming = false;
+    }
+
+    public void HideReminder()
+    {
+        reminderPanel.SetActive(false);
+        CameraPPV.instance.SwitchToGlobal();
+        Timer.instance.isTiming = true;
     }
 }

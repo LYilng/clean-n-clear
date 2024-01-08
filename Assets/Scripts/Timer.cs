@@ -6,12 +6,19 @@ using System;
 
 public class Timer : MonoBehaviour
 {
+    public static Timer instance;
+
     public TMP_Text timerText; // Reference to the TextMeshPro Text component
     public GameObject panel;
     public TMP_Text panelTimerText;
 
     private float timer;
-    private bool isTiming;
+    public bool isTiming;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
