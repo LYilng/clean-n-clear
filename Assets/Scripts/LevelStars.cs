@@ -9,26 +9,21 @@ public class LevelStars : MonoBehaviour
 
     public Image moveStar;
     public Image timeStar;
+    public Image healthStar;
+
     public Sprite fullStar;
     public Sprite blankStar;
 
     private int moveCount;
     private float timeCount;
+    private int healthCount;
 
     public int maxMoveCount;
     public float maxTimeCount;
 
-    private ConfirmPosition confirmPosition;
-    private Timer timerScript;
-
     void Awake()
     {
         instance = this;
-    }
-
-    void Start()
-    {
-
     }
 
     public void MoveStarChecker()
@@ -58,6 +53,21 @@ public class LevelStars : MonoBehaviour
         else
         {
             timeStar.sprite = fullStar;
+        }
+    }
+
+    public void HealthStarChecker()
+    {
+        healthCount = Health.instance.currentHealth;
+        Debug.Log("The lives left is " + healthCount);
+
+        if(healthCount != Health.instance.maxHealth)
+        {
+            healthStar.sprite = blankStar;
+        }
+        else
+        {
+            healthStar.sprite = fullStar;
         }
     }
 }

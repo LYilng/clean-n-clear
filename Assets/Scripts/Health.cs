@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    public static Health instance;
+
     public int currentHealth;
     public int maxHealth;
 
@@ -12,15 +14,15 @@ public class Health : MonoBehaviour
     public Sprite fullHeart;
     public Sprite blankHeart;
 
+    void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         currentHealth = maxHealth;
         UpdateHealth(); 
-    }
-
-    void Update()
-    {
-
     }
 
     public void ReduceHealth(int amt)

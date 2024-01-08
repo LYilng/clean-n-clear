@@ -127,6 +127,7 @@ public class Checker : MonoBehaviour
 
             LevelStars.instance.MoveStarChecker();
             LevelStars.instance.TimeStarChecker();
+            LevelStars.instance.HealthStarChecker();
             CameraPPV.instance.SwitchToCamera();
             HideCanvasElements();
         }
