@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SliderController : MonoBehaviour
 {
@@ -38,10 +39,29 @@ public class SliderController : MonoBehaviour
         {
             Debug.Log("Filled");
 
-            if(canvasTransform != null & imageTransform != null)
-            {
-                imageTransform.anchoredPosition = Vector2.zero;
-            }
+            //if(canvasTransform != null & imageTransform != null)
+            //{
+                //imageTransform.anchoredPosition = Vector2.zero;
+            //}
+
+
+
         }
     }
+
+
+    public void OnGameCompleted()
+    {
+        //PlayerPrefs.SetInt("ObjectToDelete", index);
+
+        SceneManager.LoadScene("Level02");
+        DeleteObject();
+    }
+
+    private void DeleteObject()
+    {
+        GameObject objectToDelete = GameObject.Find("rat");
+        Destroy(objectToDelete);
+    }
+
 }

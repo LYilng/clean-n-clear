@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level02.unity
     guid: 4ed5d373f38d3ce4fb1eb84ce87a3fca
+  - enabled: 1
+    path: Assets/Scenes/CockRoach.unity
+    guid: 859b05acb71b87e41bd9518ba0a659ed
   m_configObjects: {}
