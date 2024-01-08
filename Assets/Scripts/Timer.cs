@@ -17,6 +17,8 @@ public class Timer : MonoBehaviour
     {
         timer = 0f;
         isTiming = true;
+
+        panel.SetActive(false);
     }
 
     void Update()

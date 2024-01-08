@@ -823,6 +823,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   objUI: {fileID: 672924215}
+  hologramMaterial: {fileID: 0}
 --- !u!114 &955686306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1145,6 +1146,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   objUI: {fileID: 672924215}
+  hologramMaterial: {fileID: 0}
 --- !u!114 &1337525297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1215,6 +1217,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   objUI: {fileID: 672924215}
+  hologramMaterial: {fileID: 0}
 --- !u!114 &1419636272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1278,7 +1281,6 @@ GameObject:
   - component: {fileID: 1461958787}
   - component: {fileID: 1461958786}
   - component: {fileID: 1461958785}
-  - component: {fileID: 1461958789}
   - component: {fileID: 1461958790}
   - component: {fileID: 1461958791}
   m_Layer: 5
@@ -1375,18 +1377,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1461958789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461958784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c89f1a38eb488645bb671c58b16db61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1461958790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1450,6 +1440,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   objUI: {fileID: 672924215}
+  hologramMaterial: {fileID: 0}
 --- !u!114 &1473200735
 MonoBehaviour:
   m_ObjectHideFlags: 0
