@@ -344,12 +344,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 722420739}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af31d3432949ac64fa3d3152b4929c64, type: 3}
+  m_Script: {fileID: 11500000, guid: 1573b99027e233f4693779133dc2145d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   progressBar: {fileID: 1729778790}
   increaseAmount: 0.1
-  image: {fileID: 1363717198}
+  image: {fileID: 912538590}
 --- !u!1 &912538585
 GameObject:
   m_ObjectHideFlags: 0

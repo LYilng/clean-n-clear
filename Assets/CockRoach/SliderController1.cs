@@ -39,29 +39,24 @@ public class SliderController : MonoBehaviour
         {
             Debug.Log("Filled");
 
-            //if(canvasTransform != null & imageTransform != null)
-            //{
-                //imageTransform.anchoredPosition = Vector2.zero;
-            //}
-
-
-
+            OnGameCompleted();
         }
     }
 
 
     public void OnGameCompleted()
     {
-        //PlayerPrefs.SetInt("ObjectToDelete", index);
-
         SceneManager.LoadScene("Level02");
-        DeleteObject();
     }
 
-    private void DeleteObject()
+    /*private void DeleteObject()
     {
-        GameObject objectToDelete = GameObject.Find("rat");
+        GameObject objectToDelete = GameObject.Find("Cube");
+        Debug.Log(objectToDelete);
+        Debug.Log("Test");
         Destroy(objectToDelete);
-    }
+    }*/
+
+
 
 }
