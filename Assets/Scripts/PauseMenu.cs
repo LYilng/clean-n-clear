@@ -51,6 +51,11 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(currentLvlID);
     }
 
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
+    }
+
     public void HideCanvasElements()
     {
         foreach (GameObject canvasElement in canvasElements)

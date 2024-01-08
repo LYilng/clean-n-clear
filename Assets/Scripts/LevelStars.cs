@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelStars : MonoBehaviour
@@ -39,6 +40,8 @@ public class LevelStars : MonoBehaviour
         {
             moveStar.sprite = fullStar;
         }
+
+        StarsManager.instance.SaveStars();
     }
 
     public void TimeStarChecker()
@@ -54,6 +57,8 @@ public class LevelStars : MonoBehaviour
         {
             timeStar.sprite = fullStar;
         }
+
+        StarsManager.instance.SaveStars();
     }
 
     public void HealthStarChecker()
@@ -69,5 +74,7 @@ public class LevelStars : MonoBehaviour
         {
             healthStar.sprite = fullStar;
         }
+
+        StarsManager.instance.SaveStars();
     }
 }
