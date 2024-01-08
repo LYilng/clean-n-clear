@@ -18,7 +18,6 @@ public class Checker : MonoBehaviour
 
     public static bool success = true;
 
-    private Health healthComponent;
     public GameObject reminderPanel;
     public GameObject canvasElements;
 
@@ -125,6 +124,8 @@ public class Checker : MonoBehaviour
             timer.ShowPanelWithTimer();
             confirmPosition.ShowPanelWithMove();
 
+            Health.instance.HealthText();
+
             LevelStars.instance.MoveStarChecker();
             LevelStars.instance.TimeStarChecker();
             LevelStars.instance.HealthStarChecker();
@@ -133,11 +134,17 @@ public class Checker : MonoBehaviour
         }
         else
         {
-            healthComponent = GetComponent<Health>();
-            healthComponent.ReduceHealth(1);
+            Health.instance.ReduceHealth(1);
 
-            panel.SetActive(false);
-            ShowReminder();
+            if(Health.instance.currentHealth <= 0)
+            {
+                reminderPanel.SetActive(false);
+            }
+            else
+            {
+                panel.SetActive(false);
+                ShowReminder();
+            }
         }
     }
 
@@ -155,6 +162,7 @@ public class Checker : MonoBehaviour
 
     private void ShowReminder()
     {
+        HideCanvasElements();
         reminderPanel.SetActive(true);
         CameraPPV.instance.SwitchToCamera();
         Timer.instance.isTiming = false;
@@ -165,6 +173,8 @@ public class Checker : MonoBehaviour
         reminderPanel.SetActive(false);
         CameraPPV.instance.SwitchToGlobal();
         Timer.instance.isTiming = true;
+
+        canvasElements.SetActive(true);
     }
 
     public void HideCanvasElements()

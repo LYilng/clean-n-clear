@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using System;
 
 public class Health : MonoBehaviour
 {
@@ -13,6 +15,13 @@ public class Health : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite blankHeart;
+
+    public TMP_Text healthText;
+    public TMP_Text movesGO;
+    public TMP_Text timeGO;
+
+    public GameObject canvasElements;
+    public GameObject gameOverPanel;
 
     void Awake()
     {
@@ -54,6 +63,24 @@ public class Health : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("Level Failed");
+        CameraPPV.instance.SwitchToCamera();
+        HideCanvasElements();
+
+        movesGO.text = ConfirmPosition.instance.moveCount.ToString();
+        timeGO.text = TimeSpan.FromSeconds(Timer.instance.timer).ToString(@"mm\:ss");
+        gameOverPanel.SetActive(true);
+    }
+
+    public void HealthText()
+    {
+        if(healthText != null)
+        {
+            healthText.text = currentHealth.ToString();
+        }
+    }
+
+    public void HideCanvasElements()
+    {
+        canvasElements.SetActive(false);
     }
 }
