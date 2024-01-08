@@ -10,7 +10,7 @@ public class ConfirmPosition : MonoBehaviour
     private Transform Object;
     public GameObject objUI;  //Object UI (confirm, cancel, rotate)
 
-    private int moveCount = 0;
+    public int moveCount = 0;
     public TMP_Text moveCountText;
     public TMP_Text panelMoveText;
     public GameObject panel;

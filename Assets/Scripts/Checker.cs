@@ -19,8 +19,8 @@ public class Checker : MonoBehaviour
     public static bool success = true;
 
     private Health healthComponent;
-
     public GameObject reminderPanel;
+    public GameObject canvasElements;
 
     void Start()
     {
@@ -124,6 +124,11 @@ public class Checker : MonoBehaviour
             //LoadNextScene();
             timer.ShowPanelWithTimer();
             confirmPosition.ShowPanelWithMove();
+
+            LevelStars.instance.MoveStarChecker();
+            LevelStars.instance.TimeStarChecker();
+            CameraPPV.instance.SwitchToCamera();
+            HideCanvasElements();
         }
         else
         {
@@ -159,5 +164,10 @@ public class Checker : MonoBehaviour
         reminderPanel.SetActive(false);
         CameraPPV.instance.SwitchToGlobal();
         Timer.instance.isTiming = true;
+    }
+
+    public void HideCanvasElements()
+    {
+        canvasElements.SetActive(false);
     }
 }

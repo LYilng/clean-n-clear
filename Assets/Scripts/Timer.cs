@@ -12,7 +12,7 @@ public class Timer : MonoBehaviour
     public GameObject panel;
     public TMP_Text panelTimerText;
 
-    private float timer;
+    public float timer;
     public bool isTiming;
 
     private void Awake()
