@@ -70,7 +70,7 @@ public class TcQTE : MonoBehaviour
             TownCouncilBtn.QTEWin = true;
             TownCouncilBtn.TcIsPressed = false;
             Debug.Log(currentValue);
-            rootTransform.gameObject.SetActive(false);
+            transform.gameObject.SetActive(false);
         }
     }
 }
