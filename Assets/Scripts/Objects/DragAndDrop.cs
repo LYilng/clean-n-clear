@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
 {
-    //public static DragAndDrop instance;
-
     [SerializeField] private LayerMask hoverAreaLayer;  //Layermask for mouse raycast detection
 
     //Dragging
@@ -42,7 +40,6 @@ public class DragAndDrop : MonoBehaviour
     {
         if (objUI == null) return;
         
-        Debug.Log(ID);
         if (IDManager.instance.isObjSelected == false)  //If an object is not selected
         {
             IDManager.instance.isObjSelected = true;

@@ -33,9 +33,6 @@ public class TownCouncilBtn : MonoBehaviour
         {
             QTECanvas.SetActive(false);
         }
-
-
-        Debug.Log(TcIsPressed);
     }
 
     public void ToggleTcBtn()

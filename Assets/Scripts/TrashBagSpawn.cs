@@ -6,7 +6,7 @@ public class TrashBagSpawn : MonoBehaviour
 {
     public GameObject trashBagPrefab;
     private int trashBagsSpawned = 0;
-    private int maxTrashBag = 1;
+    private int maxTrashBag = 2;
 
 
 

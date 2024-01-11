@@ -15,6 +15,7 @@ public class Checker : MonoBehaviour
     public ConfirmPosition confirmPosition;
 
     public Transform trashFolder;
+    public Transform pestFolder;
 
     public static bool success = true;
 
@@ -113,12 +114,41 @@ public class Checker : MonoBehaviour
         }
     }
 
+    private bool CheckPestsInArea()
+    {
+        int pestCount = pestFolder.childCount;
+
+        for (int i = 0; i < pestFolder.childCount; i++)  //For every object that is a child of the 'Objects' game object,
+        {
+            Transform child = pestFolder.GetChild(i);
+
+            if (child.gameObject.activeSelf == true)
+            {
+                break;
+            }
+            else
+            {
+                pestCount--;
+            }
+        }
+
+        if (pestCount > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void CheckSuccess()
     {
         bool isObjsInArea = CheckObjectsInArea();
         bool containsTrash = CheckTrashInArea();
+        bool containsPests = CheckPestsInArea();
 
-        if (isObjsInArea && !containsTrash)  //If objects are in correct area and all trash is removed
+        if (isObjsInArea && !containsTrash && !containsPests)  //If objects are in correct area and all trash is removed
         {
             //LoadNextScene();
             timer.ShowPanelWithTimer();
