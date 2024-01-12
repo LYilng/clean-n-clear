@@ -5015,7 +5015,7 @@ GameObject:
   - component: {fileID: 1511249663}
   - component: {fileID: 1511249662}
   m_Layer: 5
-  m_Name: NextBtn
+  m_Name: MenuBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
