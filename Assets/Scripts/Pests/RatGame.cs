@@ -45,13 +45,16 @@ public class RatGame : MonoBehaviour
 
     void StartGame()
     {
-        ratGame.SetActive(true);
-        pauseMenu.HideCanvasElements();
-        ratTransform = transform;
-
-        foreach (Transform child in gameEntities)
+        if(PestGameBtn.instance.PestBtnPressed == true)
         {
-            child.gameObject.SetActive(false);
+            ratGame.SetActive(true);
+            pauseMenu.HideCanvasElements();
+            ratTransform = transform;
+
+            foreach (Transform child in gameEntities)
+            {
+                child.gameObject.SetActive(false);
+            }
         }
     }
 

@@ -4,22 +4,18 @@ using UnityEngine;
 
 public class PestGameBtn : MonoBehaviour
 {
-    public static bool PestBtnPressed = false;
-    public static bool GameWon = false;
+    public static PestGameBtn instance;
+    public bool PestBtnPressed = false;
     public GameObject PestCanvas;
 
-    void Start()
+    void Awake()
     {
-        if (PestCanvas == null) return;
-
-        if(Input.GetMouseButtonDown(0) && PestBtnPressed)
-        {
-            PestCanvas.SetActive(true);
-        }
+        instance = this;
     }
 
     public void TogglePestBtn()
     {
+        Debug.Log("PEST BTN PRESS");
         PestBtnPressed = true;
     }
 }
