@@ -36,24 +36,60 @@ public class DragAndDrop : MonoBehaviour
         initialRot = transform.rotation;
     }
 
-    void OnMouseDown()
+    void Update()
+    {
+        // Check for touch input
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    TryStartDragging(touch.position);
+                    break;
+
+                case TouchPhase.Moved:
+                    OnTouchMove(touch.position);
+                    break;
+
+                case TouchPhase.Ended:
+                    OnTouchEnd();
+                    break;
+            }
+        }
+    }
+
+    void TryStartDragging(Vector2 touchPosition)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(touchPosition);
+        RaycastHit hit;
+
+        // Check if the touch hits this object's collider
+        if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
+        {
+            OnTouchStart(touchPosition);
+        }
+    }
+
+    void OnTouchStart(Vector2 touchPosition)
     {
         if (objUI == null) return;
-        
-        if (IDManager.instance.isObjSelected == false)  //If an object is not selected
+
+        if (IDManager.instance.isObjSelected == false)
         {
             IDManager.instance.isObjSelected = true;
-            IDManager.instance.selectedID = ID;  //Store the object's ID as the selectedID
+            IDManager.instance.selectedID = ID;
 
-            initialPos = transform.position;  //Save initial position before confirmation
-            initialRot = transform.rotation;  //Save initial rotation before confirmation
+            initialPos = transform.position;
+            initialRot = transform.rotation;
         }
 
-        if (IDManager.instance.selectedID == ID)  //Check if the selected ID matches with the object's ID (to ensure player cannot move anything else before confirming)
+        if (IDManager.instance.selectedID == ID)
         {
-            ConfirmPosition.instance.OpenObjUI();  //Open confirmation UI
+            ConfirmPosition.instance.OpenObjUI();
 
-            offset = transform.position - GetMouseWorldPos();  // Calculate offset between mouse position and object position
+            offset = transform.position - GetTouchWorldPos(touchPosition);
             isDragging = true;
 
             if (hologramInstance == null)
@@ -64,19 +100,33 @@ public class DragAndDrop : MonoBehaviour
         }
     }
 
-    void OnMouseUp()
+    // Replace OnMouseUp with OnTouchEnd
+    void OnTouchEnd()
     {
         isDragging = false;
     }
 
-    void Update()
+    // Modify GetMouseWorldPos to GetTouchWorldPos
+    Vector3 GetTouchWorldPos(Vector2 touchPosition)
     {
-        //If isDragging is true, make the object follow the mouse position
+        Ray ray = Camera.main.ScreenPointToRay(touchPosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, hoverAreaLayer))
+        {
+            mousePos = new Vector3(hit.point.x, 0f, hit.point.z);
+        }
+
+        return mousePos;
+    }
+
+    // Modify the Update function to handle touch move
+    void OnTouchMove(Vector2 touchPosition)
+    {
         if (isDragging)
         {
-            transform.position = GetMouseWorldPos() + offset;  //Set object position based on the mouse position
+            transform.position = GetTouchWorldPos(touchPosition) + offset;
 
-            //Adjust position of UI to make it below the object (includes snapping)
             Vector3 currentPosition = transform.position;
             snappedX = Mathf.Round(currentPosition.x / gridSize) * gridSize;
             snappedZ = Mathf.Round(currentPosition.z / gridSize) * gridSize;
@@ -100,20 +150,6 @@ public class DragAndDrop : MonoBehaviour
             // Rotate the object by 90 Degrees around the Y-axis
             transform.Rotate(Vector3.up, 90f);
         }
-    }
-
-    Vector3 GetMouseWorldPos()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-
-        if (Physics.Raycast(ray, out hit, Mathf.Infinity, hoverAreaLayer))
-        {
-            mousePos = new Vector3(hit.point.x, 0f, hit.point.z);  //Update latest mouse position
-        }
-
-        return mousePos;  //Return mouse position
     }
 
     public bool CheckIntersecting()

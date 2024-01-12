@@ -16,7 +16,34 @@ public class RatGame : MonoBehaviour
     public Sprite alive;
     public Sprite dead;
 
-    private void OnMouseDown()
+    private void Update()
+    {
+        // Check for touch input
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            // Check if the touch hits the object's collider
+            if (touch.phase == TouchPhase.Began)
+            {
+                TryStartGame(touch.position);
+            }
+        }
+    }
+
+    void TryStartGame(Vector2 touchPosition)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(touchPosition);
+        RaycastHit hit;
+
+        // Check if the touch hits the object's collider
+        if (Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
+        {
+            StartGame();
+        }
+    }
+
+    void StartGame()
     {
         ratGame.SetActive(true);
         pauseMenu.HideCanvasElements();
