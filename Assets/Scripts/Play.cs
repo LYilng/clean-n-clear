@@ -7,8 +7,8 @@ public class Play : MonoBehaviour
 {
     public void LoadScene()
     {
-        Debug.Log("Loading level 1");
-        SceneManager.LoadScene("Level01");
+        Debug.Log("Tutorial");
+        SceneManager.LoadScene("Tutorial");
     }
 
     // Function to quit the game
