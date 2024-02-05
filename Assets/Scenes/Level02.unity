@@ -2100,7 +2100,7 @@ MonoBehaviour:
   hoverAreaLayer:
     serializedVersion: 2
     m_Bits: 64
-  objUI: {fileID: 0}
+  objUI: {fileID: 672924215}
   hologramMaterial: {fileID: 2100000, guid: 729949fd00767884b8b93c157ec63fcd, type: 2}
 --- !u!114 &454966301
 MonoBehaviour:
@@ -4282,7 +4282,7 @@ MonoBehaviour:
   hoverAreaLayer:
     serializedVersion: 2
     m_Bits: 64
-  objUI: {fileID: 0}
+  objUI: {fileID: 672924215}
   hologramMaterial: {fileID: 2100000, guid: 729949fd00767884b8b93c157ec63fcd, type: 2}
 --- !u!114 &956239397
 MonoBehaviour:
@@ -5955,7 +5955,7 @@ MonoBehaviour:
   hoverAreaLayer:
     serializedVersion: 2
     m_Bits: 64
-  objUI: {fileID: 0}
+  objUI: {fileID: 672924215}
   hologramMaterial: {fileID: 2100000, guid: 729949fd00767884b8b93c157ec63fcd, type: 2}
 --- !u!114 &1211091660
 MonoBehaviour:
@@ -8234,7 +8234,7 @@ MonoBehaviour:
   hoverAreaLayer:
     serializedVersion: 2
     m_Bits: 64
-  objUI: {fileID: 0}
+  objUI: {fileID: 672924215}
   hologramMaterial: {fileID: 2100000, guid: 729949fd00767884b8b93c157ec63fcd, type: 2}
 --- !u!114 &1712316370
 MonoBehaviour:

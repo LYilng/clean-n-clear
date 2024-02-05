@@ -48,6 +48,8 @@ public class ConfirmPosition : MonoBehaviour
     public void Confirm()
     {
         RetrieveObject();
+
+        Debug.Log(Object);
         DragAndDrop dndScript = Object.gameObject.GetComponent<DragAndDrop>();
 
         bool isIntersecting = dndScript.CheckIntersecting();
