@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class Tutorial : MonoBehaviour
 {
     public GameObject[] panels;
+    public GameObject canvasElements;
     private int currentPanelIndex = 0;
 
     void Start()
@@ -18,6 +21,27 @@ public class Tutorial : MonoBehaviour
         if (panels.Length > 0)
         {
             panels[0].SetActive(true);
+        }
+    }
+
+    public void Update()
+    {
+        if(currentPanelIndex == 0)
+        {
+            CameraPPV.instance.SwitchToCamera();
+            HideCanvasElements();
+        }
+
+        else if(currentPanelIndex == 2)
+        {
+            CameraPPV.instance.SwitchToCamera();
+            HideCanvasElements();
+        }
+
+        else
+        {
+            CameraPPV.instance.SwitchToGlobal();
+            ShowCanvasElements();
         }
     }
 
@@ -40,7 +64,14 @@ public class Tutorial : MonoBehaviour
     {
         SceneManager.LoadScene("Level01");
     }
-    
 
+    public void HideCanvasElements()
+    {
+        canvasElements.SetActive(false);
+    }
 
+    public void ShowCanvasElements()
+    {
+        canvasElements.SetActive(true);
+    }
 }
