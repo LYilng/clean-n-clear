@@ -26,13 +26,7 @@ public class Tutorial : MonoBehaviour
 
     public void Update()
     {
-        if(currentPanelIndex == 0)
-        {
-            CameraPPV.instance.SwitchToCamera();
-            HideCanvasElements();
-        }
-
-        else if(currentPanelIndex == 2)
+        if(currentPanelIndex == 0 || currentPanelIndex == 2 || currentPanelIndex == 3 || currentPanelIndex == 4 || currentPanelIndex == 5 || currentPanelIndex == 6 || currentPanelIndex == 8)
         {
             CameraPPV.instance.SwitchToCamera();
             HideCanvasElements();
