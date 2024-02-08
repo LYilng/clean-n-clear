@@ -40,8 +40,6 @@ public class LevelStars : MonoBehaviour
         {
             moveStar.sprite = fullStar;
         }
-
-        StarsManager.instance.SaveStars();
     }
 
     public void TimeStarChecker()
@@ -57,8 +55,6 @@ public class LevelStars : MonoBehaviour
         {
             timeStar.sprite = fullStar;
         }
-
-        StarsManager.instance.SaveStars();
     }
 
     public void HealthStarChecker()
@@ -74,7 +70,5 @@ public class LevelStars : MonoBehaviour
         {
             healthStar.sprite = fullStar;
         }
-
-        StarsManager.instance.SaveStars();
     }
 }

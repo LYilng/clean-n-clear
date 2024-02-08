@@ -9,18 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: a11709414c2dbcb4499e0956eb68072b
   - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: e78352cfcd94b7440b10d7782accea31
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 6a0a52b0fbca2124eb957eb0f58abb95
+  - enabled: 1
     path: Assets/Scenes/Level01.unity
     guid: afcd3bdae6cf55f49bb43abaa21c687c
   - enabled: 1
     path: Assets/Scenes/Level02.unity
     guid: d9b5c994266ade240939020048dd661b
   - enabled: 1
-    path: Assets/Scenes/LevelSelect.unity
-    guid: e78352cfcd94b7440b10d7782accea31
-  - enabled: 1
     path: Assets/Scenes/RatGame.unity
     guid: 78d97fbd96190624ebd752a812b36e0f
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: 6a0a52b0fbca2124eb957eb0f58abb95
   m_configObjects: {}

@@ -8,7 +8,7 @@ public class Play : MonoBehaviour
     public void LoadScene()
     {
         Debug.Log("Tutorial");
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("LevelSelect");
     }
 
     // Function to quit the game
@@ -16,5 +16,15 @@ public class Play : MonoBehaviour
     {
         Debug.Log("U QUITed");
         Application.Quit();
+    }
+
+    public void Lvl1()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
+    public void Lvl2()
+    {
+        SceneManager.LoadScene("Level02");
     }
 }

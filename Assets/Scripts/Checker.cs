@@ -22,11 +22,15 @@ public class Checker : MonoBehaviour
     public GameObject reminderPanel;
     public GameObject canvasElements;
 
+    public int nextSceneLoad;
+
     void Start()
     {
         RotateArea();
 
         groundBounds = groundCollider.bounds;
+
+        nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
     void RotateArea()
@@ -182,7 +186,12 @@ public class Checker : MonoBehaviour
     {
         Debug.Log("All the objects are within the allowed area :)");
         Debug.Log("Loading Next Level");
-        SceneManager.LoadScene("Level02");
+        SceneManager.LoadScene(nextSceneLoad);
+
+        if(nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
+        {
+            PlayerPrefs.SetInt("levelAt", nextSceneLoad);
+        }
     }
 
     public void LoadMainMenu()
